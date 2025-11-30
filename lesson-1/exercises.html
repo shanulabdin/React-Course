@@ -35,13 +35,18 @@
     );
     
     // ex 4
-      const socks = 10;
-      const tShirt = 8;
+    const socks = 10;
+    const tShirt = 8;
 
-      console.log(socks + (tShirt * 2));
+    const productCost = socks + (tShirt * 2);
+
+    // ex 5
+    const displayCost = (
+      <p>Produc cost: ${productCost}</p>
+    );
 
     const reactContainer = document.querySelector('.reactContainer');
-    ReactDOM.createRoot(reactContainer).render(design);
+    ReactDOM.createRoot(reactContainer).render(displayCost);
   </script>
 </body>
 </html>
