@@ -1,9 +1,7 @@
-const currentTime = dayjs().format('HH:mm:ss');
-
 const time = (
   <div>
     <p>
-      Current Time: {currentTime}
+      Current Time: {dayjs().format('HH:mm:ss')}
     </p>
   </div>
 );
@@ -11,3 +9,14 @@ const time = (
 const clockContainer = document.querySelector('#clockContainer');
 const root = ReactDOM.createRoot(clockContainer);
 root.render(time);
+
+setInterval(() => {
+  const time = (
+    <div>
+      <p>
+        Current Time: {dayjs().format('HH:mm:ss')}
+      </p>
+    </div>
+);
+  root.render(time);
+}, 1000);
