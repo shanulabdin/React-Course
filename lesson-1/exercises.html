@@ -40,9 +40,18 @@
 
     const productCost = socks + (tShirt * 2);
 
+
+    const shippingCost = 5;
+    const totalCost = productCost + shippingCost;
+
     // ex 1e
     const displayCost = (
-      <p>Produc cost: ${productCost}</p>
+      <div>
+        <p>Produc cost: ${productCost}</p>
+        <p>Produc cost: ${shippingCost}</p>
+        <p>Produc cost: ${totalCost}</p>
+        <button>Place Your order</button>
+      </div>
     );
 
     const reactContainer = document.querySelector('.reactContainer');
