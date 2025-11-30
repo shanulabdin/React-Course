@@ -59,8 +59,14 @@
     const date = dayjs().format('MMMM D');
     console.log(date);
 
+    const displayDate = (
+      <div>
+        <p>Today is {date}</p>  
+      </div>
+    );
+
     const reactContainer = document.querySelector('.reactContainer');
-    ReactDOM.createRoot(reactContainer).render(displayCost);
+    ReactDOM.createRoot(reactContainer).render(displayDate);
   </script>
 </body>
 </html>
