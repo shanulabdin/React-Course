@@ -13,6 +13,8 @@
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
 
   <script type="text/babel">
     // ex 1a
@@ -53,6 +55,9 @@
         <button>Place Your order</button>
       </div>
     );
+
+    const date = dayjs().format('MMMM D');
+    console.log(date);
 
     const reactContainer = document.querySelector('.reactContainer');
     ReactDOM.createRoot(reactContainer).render(displayCost);
