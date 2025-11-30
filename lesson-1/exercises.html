@@ -65,8 +65,17 @@
       </div>
     );
 
+    const currentTime = dayjs().format('HH:mm:ss');
+    console.log(currentTime);
+    
+    const displayTime = (
+      <div>
+        <p>Current time: {currentTime} </p>  
+      </div>
+    );
+
     const reactContainer = document.querySelector('.reactContainer');
-    ReactDOM.createRoot(reactContainer).render(displayDate);
+    ReactDOM.createRoot(reactContainer).render(displayTime);
   </script>
 </body>
 </html>
