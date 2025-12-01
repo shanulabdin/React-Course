@@ -16,21 +16,21 @@
 
       function ChatInput(){
         return (
-          <div>
-            <input />
+          <>
+            <input placeholder="Send a message to ChatBot" size="30" />
             <button>Send</button>
-          </div>
+          </>
         )
       }
 
-      const div = (
-        <div>
+      const app = (
+        <>
           <ChatInput />
-        </div>
+        </>
       );
 
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(div);
+      ReactDOM.createRoot(container).render(app);
     </script>
   </body>
 </html>
