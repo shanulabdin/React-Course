@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ChatBot</title>
+    <title>Challenge Exercises</title>
   </head>
   <body>
     <div class="js-container"></div>
@@ -14,11 +14,11 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-      function ProductDetails({name, value}){
+      function ProductDetails({name, price}){
         return (
           <div>
             <p>{name}</p>
-            <p>{value}</p>
+            <p>{price}</p>
             <button>Add to Cart</button>
           </div>
         );
@@ -28,16 +28,16 @@
         return (
           <>
             <ProductDetails 
-               name="Cotton socks" 
-               value="Price: $10.90"
+              name="Cotton Socks"
+              price="Price: $10.90"
             />
             <ProductDetails 
-               name="Tennis balls" 
-               value="Price: $6.00"
+              name="Tennis Balls"
+              price="Price: $6.00"
             />
             <ProductDetails 
-               name="Plain T-Shirt" 
-               value="Price: $7.99"
+              name="Plain T-Shirt"
+              price="Price: $7.99"
             />
           </>
         );
