@@ -12,9 +12,10 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-      function ProductDetails({name, price, discountPrice}){
+      function ProductDetails({name, price, discountPrice, imageSrc}){
         return (
           <div>
+            <img src={imageSrc} width="100px" />
             <p>{name}</p>
             
             {discountPrice ? (
@@ -35,15 +36,18 @@
         return (
           <>
             <ProductDetails 
+              imageSrc="cotton-socks.png"
               name="Cotton Socks"
               price="$10.90"
               discountPrice="5.45"
             />
             <ProductDetails 
+              imageSrc="tennis-balls.png"
               name="Tennis Balls"
               price="$6.00"
             />
             <ProductDetails 
+              imageSrc="plain-t-shirt.png"
               name="Plain T-Shirt"
               price="$7.99"
               discountPrice="Discount Price: 3.99"
