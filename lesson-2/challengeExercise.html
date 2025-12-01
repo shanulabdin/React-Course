@@ -14,8 +14,14 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-      
+      function App(){
+        return (
+          console.log('hello')
+        );
+      }
 
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
     </script>
   </body>
 </html>
