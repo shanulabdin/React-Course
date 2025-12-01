@@ -17,15 +17,13 @@
           <div>
             <p>{name}</p>
             
-            {!discountPrice && (
-              <p>Price: {price}</p>
-            )}
-
-            {discountPrice && (
+            {discountPrice ? (
               <>
                 <del>Price: {price}</del>
                 <p>Discount Price: {discountPrice}</p>
               </>
+            ) : (            
+              <p>Price: {price}</p>
             )}
             
             <button>Add to Cart</button>
