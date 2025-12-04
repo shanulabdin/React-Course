@@ -59,7 +59,7 @@
       }
 
       function ChatMessages(){
-        const chatMessages = [{
+        const array = React.useState([{
           message: 'hello chatbot',
           sender: 'user',
           id: 'id1'
@@ -75,16 +75,16 @@
           message: 'Today is December 1',
           sender: 'robot',
           id: 'id4'
-        }];
-
+        }]);
+        
         function sendMessage() {
           chatMessages.push({
             message: 'test',
             sender: 'user',
             id: crypto.randomUUID()
           });
-          console.log(crypto.randomUUID())
         }
+        console.log(chatMessages)
         return (
           <>
             <button onClick={sendMessage}>Send Message</button>
