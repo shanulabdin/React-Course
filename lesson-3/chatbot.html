@@ -79,14 +79,18 @@
         const chatMessages = array[0];
         const setChatMessages = array[1];
 
+        console.log(setChatMessages)
         function sendMessage() {
-          chatMessages.push({
-            message: 'test',
-            sender: 'user',
-            id: crypto.randomUUID()
-          });
+          setChatMessages([
+            ...chatMessages, 
+            {
+              message: 'test',
+              sender: 'user',
+              id: crypto.randomUUID()
+            }
+          ]);
         }
-        console.log(chatMessages)
+
         return (
           <>
             <button onClick={sendMessage}>Send Message</button>
