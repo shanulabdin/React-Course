@@ -29,6 +29,9 @@
       function App(){
         const [count, setCount] = React.useState(0);
 
+        function resetCount(){
+          setCount(0);
+        }
         return (
           <>
             <Counter 
@@ -39,6 +42,7 @@
               count={count}
               setCount={setCount}
             />
+            <button onClick={resetCount} >Reset</button>
           </>
         );
       }
