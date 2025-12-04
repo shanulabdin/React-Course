@@ -14,7 +14,7 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-      function ChatInput(){
+      function ChatInput(chatMessages, setChatMessages){
         const [inputText, setInputText] = React.useState('');
 
         function saveInputText(event) {
@@ -78,9 +78,7 @@
         );
       }
 
-      function ChatMessages(){
-
-
+      function ChatMessages({ chatMessages }){
         return (
           <>
             {chatMessages.map((chatMessage) => {
@@ -97,10 +95,36 @@
       }
 
       function App(){
+        const [chatMessages, setChatMessages] = React.useState([{
+          message: 'hello chatbot',
+          sender: 'user',
+          id: 'id1'
+        }, {
+          message: 'Hello! How can  help you?',
+          sender: 'robot',
+          id: 'id2'
+        }, {
+          message: 'Get me todays date',
+          sender: 'user',
+          id: 'id3'
+        }, {
+          message: 'Today is December 1',
+          sender: 'robot',
+          id: 'id4'
+        }]);
+        // const [chatMessages, setChatMessages] = array;
+        // const chatMessages = array[0];
+        // const setChatMessages = array[1];
+        
         return (
           <>
-            <ChatInput />
-            <ChatMessages />
+            <ChatInput 
+              chatMessages={chatMessages}
+              setChatMessages={setChatMessages}
+            />
+            <ChatMessages 
+              chatMessages={chatMessages}
+            />
           </>
         );
       }
