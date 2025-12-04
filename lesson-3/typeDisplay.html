@@ -12,8 +12,41 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
+      function Input( {text, setText} ){
+        function saveText(event){
+          setText(event.target.value);
+        }
+
+        return (
+          <input 
+            placeholder="Type a name"
+            onChange={saveText}
+          />
+        );
+      }
+
+      function Display( {text, setText} ){
+
+        return (
+          <p>Hello {text}</p>
+        );
+      }
+
       function App(){
-        
+        const [text, setText] = React.useState('');
+
+        return (
+          <>
+            <Input 
+              text={text}
+              setText={setText}
+            />
+            <Display 
+              text={text}
+              setText={setText}
+            />
+          </>
+        );
       }
 
       const container = document.querySelector('.js-container')
