@@ -21,6 +21,7 @@
           <input 
             placeholder="Type a name"
             onChange={saveText}
+            value={text}
           />
         );
       }
@@ -35,12 +36,17 @@
       function App(){
         const [text, setText] = React.useState('');
 
+        function resetText(){
+          setText('');
+        }
+
         return (
           <>
             <Input 
               text={text}
               setText={setText}
             />
+            <button onClick={resetText} >Reset</button>
             <Display 
               text={text}
               setText={setText}
