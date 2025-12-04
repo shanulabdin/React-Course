@@ -14,7 +14,7 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-      function ChatInput(chatMessages, setChatMessages){
+      function ChatInput({chatMessages, setChatMessages}){
         const [inputText, setInputText] = React.useState('');
 
         function saveInputText(event) {
@@ -25,7 +25,7 @@
           setChatMessages([
             ...chatMessages, 
             {
-              message: 'test',
+              message: inputText,
               sender: 'user',
               id: crypto.randomUUID()
             }
