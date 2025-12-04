@@ -26,8 +26,7 @@
         );
       }
 
-      function Display( {text, setText} ){
-
+      function Display( {text} ){
         return (
           <p>Hello {text}</p>
         );
@@ -39,7 +38,6 @@
         function resetText(){
           setText('');
         }
-
         function exampleText(){
           setText('Sara');
         }
@@ -50,11 +48,12 @@
               text={text}
               setText={setText}
             />
+
             <button onClick={resetText} >Reset</button>
             <button onClick={exampleText} >Example</button>
+            
             <Display 
               text={text}
-              setText={setText}
             />
           </>
         );
