@@ -40,6 +40,10 @@
           setText('');
         }
 
+        function exampleText(){
+          setText('Sara');
+        }
+
         return (
           <>
             <Input 
@@ -47,6 +51,7 @@
               setText={setText}
             />
             <button onClick={resetText} >Reset</button>
+            <button onClick={exampleText} >Example</button>
             <Display 
               text={text}
               setText={setText}
