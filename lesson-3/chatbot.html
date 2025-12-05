@@ -20,8 +20,11 @@
 
         function saveInputText(event) {
           setInputText(event.target.value);
+        }
+
+        function handleKeyDown(event){
           if(event.key === 'Enter'){
-            setInputText(sendMessage);
+            sendMessage();
           } else if(event.key === 'Escape'){
             setInputText('');
           }
@@ -71,7 +74,7 @@
               placeholder="Send a message to ChatBot" 
               size="30" 
               onChange={saveInputText}
-              onKeyDown={saveInputText}
+              onKeyDown={handleKeyDown}
               value={inputText}
             />
             <button
@@ -102,13 +105,13 @@
         return (
           <div>
             {sender === 'robot' && (
-              <img src="../robot.png" width="50" />
+              <img src="../robot.png" width="30" />
             )}
 
             {message}
             
             {sender === 'user' && (
-              <img src="../user.png" width="50" />
+              <img src="../user.png" width="30" />
             )}
           </div>
         );
