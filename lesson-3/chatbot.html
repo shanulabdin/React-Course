@@ -21,6 +21,8 @@
           setInputText(event.target.value);
           if(event.key === 'Enter'){
             setInputText(sendMessage);
+          } else if(event.key === 'Escape'){
+            setInputText('');
           }
         }
 
