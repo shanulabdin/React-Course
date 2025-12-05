@@ -18,7 +18,10 @@
         const [inputText, setInputText] = React.useState('');
 
         function saveInputText(event) {
-          setInputText(event.target.value)
+          setInputText(event.target.value);
+          if(event.key === 'Enter'){
+            setInputText(sendMessage);
+          }
         }
 
         function sendMessage() {
@@ -52,6 +55,7 @@
               placeholder="Send a message to ChatBot" 
               size="30" 
               onChange={saveInputText}
+              onKeyDown={saveInputText}
               value={inputText}
             />
             <button
