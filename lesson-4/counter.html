@@ -23,6 +23,9 @@
 
     function App(){
       const [count, setCount] = React.useState(0);
+      const [autoClicking, setAutoClicking] = React.useState(false);
+
+      const clickButtonRef = React.useRef(null);
 
       function increaseCount(){
         setCount(count + 1);
@@ -32,11 +35,24 @@
         setCount(0);
       }
 
+      function autoClick(){
+        setInterval(() => {
+          const buttonElem = clickButtonRef.current;
+
+          if(buttonElem){
+            buttonElem.click();
+          }
+        }, 1000);
+      } 
+
       return (
         <>
-          <button onClick={increaseCount} >Clicked {count} Times</button>
+          <button 
+            onClick={increaseCount} 
+            ref={clickButtonRef}
+          >Clicked {count} Times</button>
           <button onClick={resetCount} >Reset</button>
-          <button>Auto Click</button>
+          <button onClick={autoClick} >Auto Click</button>
         </>
       );
     }
