@@ -28,9 +28,10 @@
       
       React.useEffect(() => {
         setInterval(() => {
+          console.log('run code');
           setTime(dayjs().format('HH:mm:ss'));
         }, 1000);
-      })
+      }, []);
 
       return (
         <p>Current Time: {time} </p>
