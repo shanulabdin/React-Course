@@ -28,10 +28,14 @@
         setCount(count + 1);
       }
 
+      function resetCount(){
+        setCount(0);
+      }
+
       return (
         <>
           <button onClick={increaseCount} >Clicked {count} Times</button>
-          <button>Reset</button>
+          <button onClick={resetCount} >Reset</button>
           <button>Auto Click</button>
         </>
       );
