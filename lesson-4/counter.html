@@ -7,13 +7,29 @@
   <style>
     body {
       font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: rgb(222, 222, 222);
+      margin: 0;
     }
-
+    button{
+      background-color: rgb(25, 135, 84);
+      color: white;
+      padding: 10px 8px;
+      border: none;
+      margin: 5px;
+    }
   </style>
 </head>
 <body>
     
-  <div class="js-container"></div>
+  <div class="js-container">
+    <button>Clicked 50 Times</button>
+    <button>Reset</button>
+    <button>Auto Click</button>
+  </div>
 
   <script src="https://unpkg.com/supersimpledev/react.js"></script>
   <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
