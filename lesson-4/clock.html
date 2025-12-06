@@ -23,8 +23,18 @@
   <script src="https://unpkg.com/supersimpledev/babel.js"></script>
   <script type="text/babel">
 
-    function App(){
+    function Clock(){
+      const [time] = React.useState(dayjs().format('HH:mm:ss'));
 
+      return (
+        <p>Current Time: {time} </p>
+      );
+    }
+
+    function App(){
+      return (
+        <Clock />
+      );
     }
 
     const container = document.querySelector('.js-container');
