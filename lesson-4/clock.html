@@ -24,7 +24,13 @@
   <script type="text/babel">
 
     function Clock(){
-      const [time] = React.useState(dayjs().format('HH:mm:ss'));
+      const [time, setTime] = React.useState(dayjs().format('HH:mm:ss'));
+      
+      React.useEffect(() => {
+        setInterval(() => {
+          setTime(dayjs().format('HH:mm:ss'));
+        }, 1000);
+      })
 
       return (
         <p>Current Time: {time} </p>
