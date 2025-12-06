@@ -25,15 +25,20 @@
 
   <script src="https://unpkg.com/supersimpledev/babel.js"></script>
   <script type="text/babel">
-    function Button(){
-      return (
-        <button className="button" >ON</button>
-      );
-    }
-
     function App(){
+      const [isbuttonOn, setIsButtonOn] = React.useState(true);
+
+      function switchButtonOn(){
+        isbuttonOn ? setIsButtonOn(false) : setIsButtonOn(true);
+      }
+
       return (
-        <Button />
+        <button 
+          className="button" 
+          onClick={switchButtonOn}
+        >
+          {isbuttonOn ? 'ON' : 'OFF'}
+        </button>
       );
     }
 
