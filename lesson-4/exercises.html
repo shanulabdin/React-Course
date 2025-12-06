@@ -6,13 +6,18 @@
   <title>Exercise 4</title>
   <style>
     .button{
-      background-color: rgb(25, 135, 84);
       color: white;
       border: none;
       padding: 12px 18px;
       border-radius: 6px;
       font-size: 20px;
       cursor: pointer;
+    }
+    .button-on{
+      background-color: rgb(25, 135, 84);
+    }
+    .button-off{
+      background-color: rgb(220, 53, 69);
     }
   </style>
 </head>
@@ -34,7 +39,7 @@
 
       return (
         <button 
-          className="button" 
+          className={`button ${isbuttonOn ? 'button-on' : 'button-off'}`}
           onClick={switchButtonOn}
         >
           {isbuttonOn ? 'ON' : 'OFF'}
