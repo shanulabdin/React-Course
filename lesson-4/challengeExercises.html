@@ -31,6 +31,11 @@
       cursor: pointer;
       margin-top: 10px;
     }
+
+    .show-btn{
+      margin-left: 5px;
+      padding: 3px 5px;
+    }
   </style>
 </head>
 <body>
@@ -44,6 +49,12 @@
   <script type="text/babel">
 
     function LoginForm(){
+      const [showPassword, setShowPassword] = React.useState(true);
+
+      function toggleShowPassword(){
+        setShowPassword(!showPassword)
+      }
+
       return (
         <>
           <div>
@@ -55,9 +66,15 @@
           <div>
             <input
               placeholder="Password"
-              type="password"
+              type={showPassword ? 'password' : 'text'}  
               className="login-input"
             />
+            <button 
+              className="show-btn"
+              onClick={toggleShowPassword}
+            >
+              Show  
+            </button>
           </div>
           <button className="login-button">Login</button>
           <button className="login-button">Sign up</button>
