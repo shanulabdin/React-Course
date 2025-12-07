@@ -65,6 +65,10 @@
         overflow: scroll;
         scrollbar-width: none;
       }
+      .introText{
+        text-align: center;
+        color: gray;
+      }
     </style>
   </head>
   <body>
@@ -213,30 +217,28 @@
         );
       }
 
+      function IntroText({ chatMessages }){
+        if( chatMessages.length !== 0){
+          return null;
+        }
+        return (
+          <p className="introText">
+            Welcome to the chatbot project! Send a message using the textbox below.
+          </p>
+        );
+      }
+
       function App(){
-        const [chatMessages, setChatMessages] = React.useState([{
-          message: 'hello chatbot',
-          sender: 'user',
-          id: 'id1'
-        }, {
-          message: 'Hello! How can  help you?',
-          sender: 'robot',
-          id: 'id2'
-        }, {
-          message: 'Get me todays date',
-          sender: 'user',
-          id: 'id3'
-        }, {
-          message: 'Today is December 1',
-          sender: 'robot',
-          id: 'id4'
-        }]);
+        const [chatMessages, setChatMessages] = React.useState([]);
         // const [chatMessages, setChatMessages] = array;
         // const chatMessages = array[0];
         // const setChatMessages = array[1];
         
         return (
           <div className="app-container">
+            <IntroText 
+              chatMessages={chatMessages}
+            />
             <ChatMessages 
               chatMessages={chatMessages}
             />
