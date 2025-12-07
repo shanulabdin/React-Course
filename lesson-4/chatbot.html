@@ -65,7 +65,7 @@
         overflow: scroll;
         scrollbar-width: none;
       }
-      .introText{
+      .wellcome-message{
         text-align: center;
         color: gray;
       }
@@ -217,17 +217,6 @@
         );
       }
 
-      function IntroText({ chatMessages }){
-        if( chatMessages.length !== 0){
-          return null;
-        }
-        return (
-          <p className="introText">
-            Welcome to the chatbot project! Send a message using the textbox below.
-          </p>
-        );
-      }
-
       function App(){
         const [chatMessages, setChatMessages] = React.useState([]);
         // const [chatMessages, setChatMessages] = array;
@@ -236,9 +225,9 @@
         
         return (
           <div className="app-container">
-            <IntroText 
-              chatMessages={chatMessages}
-            />
+            {chatMessages.length === 0 && (
+              <p className="wellcome-message" >Welcome to the chatbot project! Send a message using the textbox below.</p>
+            )}
             <ChatMessages 
               chatMessages={chatMessages}
             />
