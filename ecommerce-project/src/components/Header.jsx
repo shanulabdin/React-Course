@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router';
+import WhiteLogo from  '../assets/images/logo-white.png'
+import MobileLogoWhite from '../assets/images/mobile-logo-white.png'
 import './Header.css';
 
 export function Header() {
@@ -7,9 +9,9 @@ export function Header() {
       <div className="left-section">
         <NavLink to="/" className="header-link">
           <img className="logo"
-            src="images/logo-white.png" />
+            src={WhiteLogo} />
           <img className="mobile-logo"
-            src="images/mobile-logo-white.png" />
+            src={MobileLogoWhite} />
         </NavLink>
       </div>
 
