@@ -1,6 +1,6 @@
 import { Header } from '../components/header';
 import { Link } from 'react-router';
-import { BuyAgainIcon } from '../assets/images/icons/buy-again.png';
+import BuyAgainIcon from '../assets/images/icons/buy-again.png';
 import './OrdersPage.css';
 
 export function OrdersPage() {
