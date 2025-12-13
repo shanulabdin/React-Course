@@ -55,7 +55,7 @@ export function HomePage() {
                 <div className="product-spacer"></div>
 
                 <div className="added-to-cart">
-                  {/* <img src={CheckmarkIcon} /> */}
+                  {<img src={CheckmarkIcon} />}
                   Added
                 </div>
 
