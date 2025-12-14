@@ -51,5 +51,3 @@ function App(){
 }
 
 export default App
-// logging back in
-// hello
