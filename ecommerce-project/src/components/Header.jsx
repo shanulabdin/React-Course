@@ -21,6 +21,12 @@ export function Header({ cart }) {
     navigate(`/?search=${search}`);
   }
 
+  const handleKeyDown = (event) => {
+    if(event.key === 'Enter'){
+      searchProducts();
+    }
+  }
+
   let totalQuantity = 0;
 
   cart.forEach((cartItem) => {
@@ -39,7 +45,7 @@ export function Header({ cart }) {
       </div>
 
       <div className="middle-section">
-        <input className="search-bar" type="text" placeholder="Search" onChange={updateSearchInput} />
+        <input className="search-bar" type="text" placeholder="Search" onChange={updateSearchInput} onKeyDown={handleKeyDown} />
 
         <button className="search-button" onClick={searchProducts} >
           <img className="search-icon" src={SearchIcon} />
