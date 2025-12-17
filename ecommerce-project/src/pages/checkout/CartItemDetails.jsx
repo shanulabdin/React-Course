@@ -9,15 +9,21 @@ export function CartItemDetails({ cartItem, loadCart }) {
   }
 
   const [isUpdatingQuantity, setIsUpdatingQuantity] = useState(false);
-  const updateQuantity  = () => {
+  const [quantity, setQuantity] = useState(cartItem.quantity);
+  
+  const updateQuantity = async () => {
     if(isUpdatingQuantity){
+      await axios.put(`/api/cart-items/${cartItem.productId}`, {
+        quantity: Number(quantity),
+      })
+
+      await loadCart();
       setIsUpdatingQuantity(false);  
     } else {
       setIsUpdatingQuantity(true);  
     }
   };
 
-  const [quantity, setQuantity] = useState(cartItem.quantity);
   const updateQuantityInput = (event) => {
     setQuantity(event.target.value);
   }
