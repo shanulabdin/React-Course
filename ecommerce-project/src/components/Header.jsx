@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router';
+import { NavLink, useNavigate, useSearchParams } from 'react-router';
 import LogoWhite from '../assets/images/logo-white.png';
 import MobileLogoWhite from '../assets/images/mobile-logo-white.png';
 import CartIcon from '../assets/images/icons/cart-icon.png';
@@ -7,8 +7,11 @@ import './Header.css';
 import { useState } from 'react';
 
 export function Header({ cart }) {
-  const [search, setSearch] = useState('');
   const navigate = useNavigate();
+  const [searchParam] = useSearchParams();
+  const searchText = searchParam.get('search');
+
+  const [search, setSearch] = useState(searchText || '');
 
   const updateSearchInput = (event) => {
     setSearch(event.target.value);
