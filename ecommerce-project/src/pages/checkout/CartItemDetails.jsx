@@ -17,6 +17,11 @@ export function CartItemDetails({ cartItem, loadCart }) {
     }
   };
 
+  const [quantity, setQuantity] = useState(cartItem.quantity);
+  const updateQuantityInput = (event) => {
+    setQuantity(event.target.value);
+  }
+
   return (
     <>
       <img className="product-image"
@@ -32,7 +37,7 @@ export function CartItemDetails({ cartItem, loadCart }) {
         <div className="product-quantity">
           <span>
             Quantity: {isUpdatingQuantity 
-            ? <input type="text" className="quantity-input" /> 
+            ? <input type="text" className="quantity-input" value={quantity} onChange={updateQuantityInput} /> 
             : <span className="quantity-label">{cartItem.quantity}</span>}
           </span>
           <span className="update-quantity-link link-primary"  
