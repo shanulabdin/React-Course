@@ -12,7 +12,6 @@ function App(){
   
   useEffect(() => {
     Chatbot.addResponses({
-      // plain string responses
       greeting: "Hi there! How can I help you today?",
       help: "You can ask me about your account, orders, or general questions.",
       thanks: "You're welcome! 😊",
@@ -24,7 +23,6 @@ function App(){
       askName: "What's your name? I'd love to know who I'm chatting with.",
       mood: "I'm running at 100% CPU happiness right now!",
       
-      // functions that return strings
       time: () => `The current time is ${new Date().toLocaleTimeString()}.`,
       date: () => `Today's date is ${new Date().toLocaleDateString()}.`,
     });

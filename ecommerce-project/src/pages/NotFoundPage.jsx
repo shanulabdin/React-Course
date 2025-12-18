@@ -8,7 +8,7 @@ export function NotFoundPage({ cart }){
       <link rel="icon" href="home-favicon.png" />
 
       <Header cart={cart} />
-      <p className="not-found-message">Page Not Found</p>
+      <p className="not-found-message">404 Page Not Found</p>
     </div>
   );
 }
