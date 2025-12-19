@@ -1,0 +1,1 @@
+Wanted to practice react so i made chatgpt to make me a simple todo app so i can then practice by playing around in it.
