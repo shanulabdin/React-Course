@@ -1,0 +1,8 @@
+.wellcome-message{
+  text-align: center;
+  color: gray;
+}
+.loading-spinner{
+  height: 40px;
+  margin: -15px;
+}
