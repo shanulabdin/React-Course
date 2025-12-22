@@ -6,7 +6,15 @@ import SearchIcon from '../assets/images/icons/search-icon.png';
 import './Header.css';
 import { useState } from 'react';
 
-export function Header({ cart }) {
+type HeaderProps = {
+  cart: {
+    productId: string;
+    quantity: number;
+    deliverOptionId: string;
+  }[];
+};
+
+export function Header({ cart }: HeaderProps) {
   const navigate = useNavigate();
   const [searchParam] = useSearchParams();
   const searchText = searchParam.get('search');
