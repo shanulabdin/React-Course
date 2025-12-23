@@ -22,11 +22,11 @@ export function ChatInput({ chatMessages, setChatMessages }: ChatInputProps) {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  function saveInputText(event: React.ChangeEvent<HTMLInputElement>) {
+  function saveInputText(event: { target: { value: string } }) {
     setInputText(event.target.value);
   }
 
-  function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
+  function handleKeyDown(event: { key: string }) {
     if (event.key === 'Enter') {
       sendMessage();
     } else if (event.key === 'Escape') {
