@@ -3,13 +3,7 @@ import UserProfileImage from '../assets/pfp.jpg';
 import './ChatMessage.css';
 import dayjs from 'dayjs';
 
-type ChatMessageProps = {
-  message: string;
-  sender: 'user' | 'robot';
-  time?: string;
-};
-
-export function ChatMessage( {message, sender, time}: ChatMessageProps ) {
+export function ChatMessage( {message, sender, time} ){
   // const message = props.message;
   // const sender = props.sender;
 
