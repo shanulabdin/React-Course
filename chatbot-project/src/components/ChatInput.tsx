@@ -1,33 +1,47 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Chatbot } from 'supersimpledev'
 import LoadingGif from '../assets/loading-spinner.gif';
 import './ChatInput.css';
 import dayjs from 'dayjs';
 
-export function ChatInput({chatMessages, setChatMessages}){
+type ChatMessage = {
+  id: string;
+  message: ReactNode;
+  sender: 'user' | 'robot';
+  time ?: number;
+};
+
+type ChatMessages = ChatMessage[];
+
+type ChatInputProps = {
+  chatMessages: ChatMessages;
+  setChatMessages: (messages: ChatMessages) => void;
+};
+
+export function ChatInput({ chatMessages, setChatMessages }: ChatInputProps) {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  function saveInputText(event) {
+  function saveInputText(event: React.ChangeEvent<HTMLInputElement>) {
     setInputText(event.target.value);
   }
 
-  function handleKeyDown(event){
-    if(event.key === 'Enter'){
+  function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'Enter') {
       sendMessage();
-    } else if(event.key === 'Escape'){
+    } else if (event.key === 'Escape') {
       setInputText('');
     }
   }
 
   async function sendMessage() {
-    if(isLoading || inputText === ''){
+    if (isLoading || inputText === '') {
       return;
     }
     setIsLoading(true);
 
     const newChatMessages = [
-      ...chatMessages, 
+      ...chatMessages,
       {
         message: inputText,
         sender: 'user',
@@ -37,9 +51,11 @@ export function ChatInput({chatMessages, setChatMessages}){
     ]
 
     setChatMessages([
-      ...newChatMessages, 
+      ...newChatMessages,
       {
-        message: <img className="loading-spinner" src={LoadingGif} />,
+        message: (
+          <img className="loading-spinner" alt="Loading..." src={LoadingGif} />
+        ),
         sender: 'robot',
         id: crypto.randomUUID()
       }
@@ -48,7 +64,7 @@ export function ChatInput({chatMessages, setChatMessages}){
 
     const response = await Chatbot.getResponseAsync(inputText);
     setChatMessages([
-      ...newChatMessages, 
+      ...newChatMessages,
       {
         message: response,
         sender: 'robot',
@@ -60,15 +76,15 @@ export function ChatInput({chatMessages, setChatMessages}){
     setIsLoading(false);
   }
 
-  function clearMessages(){
+  function clearMessages() {
     setChatMessages([]);
   }
 
   return (
     <div className="chat-input-container">
-      <input 
-        placeholder="Send a message to Chatbot" 
-        size="30" 
+      <input
+        placeholder="Send a message to Chatbot"
+        size="30"
         onChange={saveInputText}
         onKeyDown={handleKeyDown}
         value={inputText}
@@ -79,7 +95,7 @@ export function ChatInput({chatMessages, setChatMessages}){
         disabled={isLoading}
         className="send-button"
       >Send</button>
-      <button 
+      <button
         onClick={clearMessages}
         className="clear-button">
         Clear
