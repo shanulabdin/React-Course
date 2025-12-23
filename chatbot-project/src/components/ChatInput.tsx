@@ -40,7 +40,7 @@ export function ChatInput({ chatMessages, setChatMessages }: ChatInputProps) {
     }
     setIsLoading(true);
 
-    const newChatMessages = [
+    const newChatMessages: ChatMessages = [
       ...chatMessages,
       {
         message: inputText,
@@ -84,7 +84,7 @@ export function ChatInput({ chatMessages, setChatMessages }: ChatInputProps) {
     <div className="chat-input-container">
       <input
         placeholder="Send a message to Chatbot"
-        size="30"
+        size={30}
         onChange={saveInputText}
         onKeyDown={handleKeyDown}
         value={inputText}
