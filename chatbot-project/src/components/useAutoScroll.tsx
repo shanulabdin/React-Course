@@ -8,7 +8,7 @@ export function useAutoScroll(dependencies: DependencyList = []){
     if (containerElem) {
       containerElem.scrollTop = containerElem.scrollHeight;
     }
-  }, [...dependencies]);
+  }, dependencies);
 
   return containerRef;
 }
